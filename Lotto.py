@@ -3,13 +3,11 @@ import random
 
 def ziehung():
     zahlen = list(range(1, 46))
-    gezogen = []
     for i in range(6):
         letzte = len(zahlen) - 1 - i
         index = random.randint(0, letzte)
         zahlen[index], zahlen[letzte] = zahlen[letzte], zahlen[index]
-        gezogen.append(zahlen[letzte])
-    return gezogen
+    return zahlen[-6:]
 
 
 def statistik(gezogen, zaehler):
